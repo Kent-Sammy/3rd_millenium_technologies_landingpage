@@ -1,4 +1,4 @@
-# [Company Name] — Corporate AI Training & Implementation website
+# 3rd Millennium Technologies — Corporate AI Training & Implementation website
 
 A responsive, accessible, SEO-ready marketing website for a Nigerian B2B company that trains employees to use AI, teaches AI-assisted creative production, and implements AI workflows. Built from the project brief (`CLAUDE.md`).
 
@@ -51,7 +51,7 @@ npm run dev          # http://localhost:3000
 | Services, FAQs, process steps, engagements, sectors, pricing rules | `src/data/content.ts` |
 | Colours, fonts, spacing (design tokens) | top of `src/app/globals.css` (`:root`) |
 | Navigation items | `mainNav` in `src/config/site.ts` |
-| Logo | `src/components/Logo.tsx` and `src/app/icon.svg` (favicon) |
+| Logo | `src/components/BrandLogo.tsx` (colours set per background in `globals.css` via `--logo-fg` / `--logo-on-fg`) and `src/app/icon.svg` (favicon) |
 | Social-sharing image | `src/app/opengraph-image.tsx` (or replace with a static `opengraph-image.png`) |
 
 Setting a value in `site.ts` (e.g. `email: "hello@yourdomain.com"`) replaces the placeholder everywhere it appears. Leave values as `null` to keep showing the labelled placeholder.
@@ -176,8 +176,10 @@ Not tested: real screen readers, real mobile devices, and Safari/Firefox (only C
 
 These are shown as labelled placeholders on the site or noted here:
 
-- [ ] Company name and domain (`site.name`, `NEXT_PUBLIC_SITE_URL`)
-- [ ] Logo and brand identity (replace `Logo.tsx`, `icon.svg`, social image)
+- [x] Company name: 3rd Millennium Technologies (`site.name`)
+- [ ] Domain (`NEXT_PUBLIC_SITE_URL`)
+- [x] Logo: `src/components/BrandLogo.tsx` (original white file in `public/brand/3mt-logo-white.svg`); favicon in `src/app/icon.svg`
+- [ ] Branded social-sharing image (`src/app/opengraph-image.tsx`)
 - [ ] Brand colours and typography (tokens in `globals.css`)
 - [ ] Contact email, phone, office/service locations, LinkedIn URL
 - [ ] Booking method (`site.bookingUrl` — e.g. Calendly — or keep the contact form)

@@ -6,8 +6,8 @@
  */
 
 export const site = {
-  /** Brand name — not yet confirmed. */
-  name: "[Company Name]",
+  /** Company name (confirmed by the owner's logo). */
+  name: "3rd Millennium Technologies",
   /** Short line used in the footer and metadata. */
   tagline: "Corporate AI training and implementation",
   description:

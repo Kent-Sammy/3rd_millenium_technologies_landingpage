@@ -245,15 +245,13 @@ ul { padding-left: 1.2em; }
 .site-header.is-scrolled { border-bottom-color: var(--line); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: var(--header-h); }
 .brand {
-  display: inline-flex; align-items: center; gap: 0.65rem; text-decoration: none;
-  color: var(--ink); font: 600 1.125rem/1 var(--font-display); letter-spacing: -0.02em;
+  /* Logo colours: blue mark on light backgrounds, white on blue/dark ones */
+  --logo-fg: var(--brand); --logo-on-fg: #ffffff;
+  display: inline-flex; align-items: center; text-decoration: none; border-radius: 8px;
 }
-.brand:hover { color: var(--ink); }
-.brand-mark {
-  width: 34px; height: 34px; border-radius: 10px; background: var(--brand); color: #fff;
-  display: grid; place-items: center; flex-shrink: 0;
-}
-.brand-name small { display: block; font: 400 0.625rem/1.4 var(--font-mono); color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 3px; }
+.brand-logo { display: block; height: clamp(40px, 3.6vw, 48px); width: auto; transition: transform .2s; }
+.brand:hover .brand-logo { transform: scale(1.03); }
+@media (prefers-reduced-motion: reduce) { .brand:hover .brand-logo { transform: none; } }
 .nav-desktop { display: none; }
 .nav-desktop ul { display: flex; list-style: none; margin: 0; padding: 0; gap: 0.15rem; }
 .nav-desktop a {
@@ -274,9 +272,7 @@ ul { padding-left: 1.2em; }
 
 /* Transparent header sitting on the homepage sky card */
 .site-header.is-overlay { background: transparent; border-bottom-color: transparent; }
-.is-overlay .brand, .is-overlay .brand:hover { color: #fff; }
-.is-overlay .brand-mark { background: #fff; color: var(--brand); }
-.is-overlay .brand-name small { color: rgba(255,255,255,.75); }
+.is-overlay .brand { --logo-fg: #ffffff; --logo-on-fg: #005ccf; }
 .is-overlay .nav-desktop a { color: rgba(255,255,255,.92); }
 .is-overlay .nav-desktop a:hover { color: #fff; background: rgba(255,255,255,.14); }
 .site-header .header-inner { transition: transform .3s ease; }
@@ -786,9 +782,8 @@ input:focus-visible, select:focus-visible, textarea:focus-visible { background: 
 .footer-grid { display: grid; gap: 2.5rem; }
 @media (min-width: 720px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 1040px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; } }
-.site-footer .brand { color: #fff; }
-.site-footer .brand-mark { background: var(--lime); color: var(--ink); }
-.site-footer .brand-name small { color: var(--on-dark-muted); }
+.site-footer .brand { --logo-fg: #ffffff; --logo-on-fg: var(--dark); }
+.site-footer .brand-logo { height: 52px; }
 .site-footer h2 { font: 400 0.6875rem/1.4 var(--font-mono); text-transform: uppercase; letter-spacing: 0.14em; color: #fff; margin-bottom: 1.1rem; }
 .site-footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.65rem; }
 .site-footer a { color: var(--on-dark-muted); text-decoration: none; }
